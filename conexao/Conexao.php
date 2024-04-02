@@ -3,7 +3,7 @@
     class Conexao
     {
         private $host= 'localhost';
-        private $db='';
+        private $db='loja_online';
         private $user='root';
         private $pass='';
         public $conn;

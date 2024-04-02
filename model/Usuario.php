@@ -5,16 +5,14 @@
         protected $nome;
         protected $email;
         protected $senha;
-        protected $endereco;
         protected $telefone;
         
-        public function __construct($id,$nome,$email,$senha,$telefone,$endereco) {
+        public function __construct($id,$nome,$email,$senha,$telefone) {
             $this->id = $id;
             $this->nome = $nome;
             $this->email = $email;
             $this->senha = $senha;
             $this->telefone = $telefone;
-            $this->endereco = $endereco;
         }
 
 
@@ -90,23 +88,6 @@
                 return $this;
         }
 
-        /**
-         * Get the value of endereco
-         */
-        public function getEndereco()
-        {
-                return $this->endereco;
-        }
-
-        /**
-         * Set the value of endereco
-         */
-        public function setEndereco($endereco): self
-        {
-                $this->endereco = $endereco;
-
-                return $this;
-        }
 
         /**
          * Get the value of telefone
@@ -131,7 +112,6 @@
             $user=new UsuarioDAO();
             $user->cadastrarUsuario($this);
         }
-        
 
     }
 

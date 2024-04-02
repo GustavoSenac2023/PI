@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    
+
     <form action="../process/UsuarioProcess.php" method="post">
         <fieldset>
             <legend>Informações</legend>
@@ -41,9 +44,9 @@
             <input type="text" name="complemento" id="complemento">
             <br>
         <fieldset>
-            <input type='hidden' name='id' value='$id'><br>
+            <input type='hidden' name='codigo' value="$id" ><br>
             <input type='hidden' name='op' value='Incluir'><br>
-        <input type="submit" onclick="location.href='view/'" value="Cadastrar">
+        <input type="submit" value="Cadastrar">
     </form>
     <a href="index.html">Cancelar</a>
 </body>
