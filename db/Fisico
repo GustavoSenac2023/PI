@@ -1,0 +1,104 @@
+create database loja_online;
+use loja_online;
+CREATE TABLE categoria (
+    categoria_id INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(50)
+);
+
+CREATE TABLE produto (
+    produto_id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50),
+    preco DECIMAL,
+    quantidade INT,
+    fk_Categoria INT
+);
+
+CREATE TABLE endereco (
+    endereco_user INTEGER,
+    rua VARCHAR(50),
+    logradouro VARCHAR(50),
+    numero_rua INT,
+    bairro VARCHAR(50),
+    complemento VARCHAR(50)
+);
+
+CREATE TABLE forma_pagamento (
+    formapag_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(50)
+);
+
+CREATE TABLE pagamento (
+    pagamento_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    fk_Forma_Pagamento INTEGER
+);
+
+CREATE TABLE usuario (
+    usuario_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50),
+	pass VARCHAR(20),
+    email VARCHAR(50),
+    telefone VARCHAR(11)
+    
+);
+
+
+CREATE TABLE carrinho_produto (
+    carprod_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    fk_Produto INTEGER
+);
+
+CREATE TABLE carrinho (
+    carrinho_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    preco_total DECIMAL,
+    fk_Carrinho_Produto INT,
+    fk_Usuario INT
+);
+
+CREATE TABLE checkout (
+    checkout_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    status BOOLEAN,
+    comprovante VARCHAR(50),
+    fk_Carrinho INTEGER,
+	fk_Pagamento INT
+);
+ 
+ALTER TABLE produto ADD CONSTRAINT FK_Produto_2
+    FOREIGN KEY (fk_Categoria)
+    REFERENCES categoria (categoria_id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE endereco ADD CONSTRAINT FK_Usuario_2
+    FOREIGN KEY (endereco_user)
+    REFERENCES usuario (usuario_id)
+    ON DELETE RESTRICT;
+ 
+ 
+ALTER TABLE checkout ADD CONSTRAINT FK_Checkout_2
+    FOREIGN KEY (fk_Carrinho)
+    REFERENCES carrinho (carrinho_id)
+    ON DELETE RESTRICT;
+	
+	ALTER TABLE checkout ADD CONSTRAINT FK_Checkout_3
+    FOREIGN KEY (fk_Pagamento)
+    REFERENCES pagamento (pagamento_id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE carrinho ADD CONSTRAINT FK_Carrinho_2
+    FOREIGN KEY (fk_Carrinho_Produto)
+    REFERENCES carrinho_produto (carprod_id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE carrinho ADD CONSTRAINT FK_Carrinho_3
+    FOREIGN KEY (fk_Usuario)
+    REFERENCES usuario (usuario_id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE carrinho_produto ADD CONSTRAINT FK_Carrinho_Produto_2
+    FOREIGN KEY (fk_Produto)
+    REFERENCES produto (produto_id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE pagamento ADD CONSTRAINT FK_Pagamento_2
+    FOREIGN KEY (fk_Forma_Pagamento)
+    REFERENCES forma_pagamento (formapag_id)
+    ON DELETE RESTRICT;
