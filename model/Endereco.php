@@ -1,5 +1,5 @@
 <?php
-
+        
     class Endereco{
         protected $id;
         protected $rua;
@@ -127,8 +127,9 @@
         }
         function cadastrarEndereco(Endereco $ender) {
             include '../dao/EnderecoDAO.php';
+            echo "AQUI ".$ender->rua;
             $ender=new EnderecoDAO();
-            $ender->cadastrarEndereco($this,);
+            $ender->cadastrarEndereco($this);
         }
     
     }

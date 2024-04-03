@@ -19,14 +19,14 @@
             break;
     }
     function incluirEnd(){
-        $id=$_POST["codigo"];
         $rua=$_POST["rua"];
         $numero=$_POST["numero"];
         $bairro=$_POST["bairro"];
         $logradouro=$_POST["logradouro"];
         $complemento=$_POST["complemento"];
         $contr= new EnderecoCont();
-        $contr->cadastrarEndereco($id,$rua,$numero,$bairro,$logradouro,$complemento);
+        //echo "AQUI ".$rua;
+        $contr->cadastrarEndereco($rua,$numero,$bairro,$logradouro,$complemento);
     }
     function incluir(){
         $nome=$_POST["nome"];
