@@ -2,8 +2,12 @@
     include '../controller/UsuarioCont.php';
     include '../controller/EnderecoCont.php';
     switch ($_REQUEST["op"]) {
+        case "Login":
+            login();
+            break;
         case "Incluir":
             incluir();
+            incluirEnd();
             break;
             case "Alterar":
                 alterar();
@@ -17,6 +21,12 @@
         default:
             echo "Key not found";
             break;
+    }
+    function login(){
+        $email=$_POST["email"];
+        $pass=$_POST["senha"];
+        $contr=new UsuarioCont();
+        $contr->login($email,$pass);
     }
     function incluirEnd(){
         $rua=$_POST["rua"];
@@ -35,7 +45,7 @@
         $senha=$_POST["senha"];
         $contr = new UsuarioCont();
         $contr->cadastrarUsuario($nome,$email,$senha,$telefone);
-        incluirEnd();
+        
     }
     function alterar() {
         

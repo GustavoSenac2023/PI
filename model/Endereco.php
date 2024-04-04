@@ -127,7 +127,7 @@
         }
         function cadastrarEndereco(Endereco $ender) {
             include '../dao/EnderecoDAO.php';
-            echo "AQUI ".$ender->rua;
+            //echo "MD ".$ender->rua;
             $ender=new EnderecoDAO();
             $ender->cadastrarEndereco($this);
         }

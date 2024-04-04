@@ -22,6 +22,10 @@ class UsuarioCont{
         $model=new Usuario(null,null,null,null,null);
         return $model;
     }
+    public static function login($email,$pass){
+        $user=new Usuario(null,null,null,null,null);
+        $user->login($email,$pass);
+    }
 }
 
 

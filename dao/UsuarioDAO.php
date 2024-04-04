@@ -21,6 +21,24 @@
             $sql="SELECT * FROM usuario ORDER BY usuario_id";
             return $con->conn->query($sql);
         }
+        function verifUsuarios(){
+            $con= new Conexao();
+            $con->fazConexao();
+            $sql="SELECT email,pass FROM usuario";
+            return $con->conn->query($sql);
+        }
+        function login($email,$pass){
+            $users= new UsuarioDAO();
+            $list=$users->verifUsuarios();
+            while($tmp=$list->fetch(PDO::FETCH_OBJ)){
+                if ($tmp->email==$email && $tmp->pass==$pass) {
+                    echo "Sucess";
+                    echo "<script>location.href='../view/UsuarioView.php';</script>";
+                }
+            }
+            echo "Failure";
+            echo "<script>location.href='../view/index.html';</script>";
+        }
     }
 
 ?>

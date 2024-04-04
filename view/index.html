@@ -11,12 +11,13 @@
   <title>Home</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="../process/UsuarioProcess.php" method="post">
       <label for="email">Email</label>
       <input type="text" name="email" id="email">
       <br>
       <label for="senha">Senha</label>
       <input type="password" name="senha" id="senha">
+      <input type='hidden' name='op' value='Login'><br>
       <input type="submit" value="Enviar">
     </form>
     <a href="crtuser.php">Criar Conta</a>

@@ -112,6 +112,11 @@
             $user=new UsuarioDAO();
             $user->cadastrarUsuario($this);
         }
+        function login($email,$pass){
+                include '../dao/UsuarioDAO.php';     
+                $user=new UsuarioDAO();
+                $user->login($email,$pass);
+        }
 
     }
 
