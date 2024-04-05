@@ -12,6 +12,11 @@
             <label for="descricao">Descrição</label>
             <input type="text" name="descricao" id="descricao" required>
         </fieldset>
+        <fieldset>
+            <legend>Pagamento</legend>
+            <label for="fk">Codigo</label>
+            <input type="text" name="fk" id="fk">
+        </fieldset>
         <input type='hidden' name='op' value='Incluir'><br>
         <input type="submit" value="Cadastrar">
     </form>
