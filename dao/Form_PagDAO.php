@@ -1,50 +1,51 @@
 <?php
 
-    class CategoriaDAO{
-        function cadastrarCategoria(Categoria $cat){
+    class Form_PagDAO{
+        function cadastrarPagamento(Forma_Pag $fpag) {
             include_once 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
-            $sql="INSERT INTO categoria (descricao) VALUES (:descricao)";
+            $sql="INSERT INTO forma_pagamento (descricao) VALUES (:descricao)";
+            //echo $tmp->usuario_id;
             $stmt=$con->conn->prepare($sql);
-            $stmt->bindValue(':descricao',$cat->getDescricao());
+            $stmt->bindValue(':descricao',$fpag->getDescricao());
             $res=$stmt->execute();
             //$res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             //echo "<script>location.href='../view/index.html';</script>";
-        } 
+        }
         function resgataID($codigo){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM categoria WHERE categoria_id='$codigo'";
+            $sql="SELECT * FROM forma_pagamento WHERE formapag_id='$codigo'";
             return $con->conn->query($sql);
         }
-        function excluirProduto($codigo){
+        function excluirPagamento($codigo){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="DELETE FROM categoria WHERE categoria_id= '$codigo'";
+            $sql="DELETE FROM forma_pagamento WHERE formapag_id= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             //echo "<script>location.href='../index.html';</script>";
         }
 
-        function alterarCategoria(Categoria $cat){
+        function alterarPagamento(Forma_Pag $fpag){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="UPDATE categoria SET descricao=:descricao WHERE categoria_id=:categoria_id";
+            $sql="UPDATE forma_pagamento SET descricao=:descricao WHERE formapag_id=:formapag_id";
             $stmt=$con->conn->prepare($sql);
-            $stmt->bindValue(':categoria_id',$cat->getId());
-            $stmt->bindValue(':descricao',$cat->getDescricao());
+            $stmt->bindValue(':formapag_id',$fpag->getId());
+            $stmt->bindValue(':descricao',$fpag->getDescricao());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
-        function listarProduto(){
+        function listarPagamento(){
             $con= new Conexao();
             $con->fazConexao();
-            $sql="SELECT * FROM categoria ORDER BY categoria_id";
+            $sql="SELECT * FROM forma_pagamento ORDER BY formapag_id";
             return $con->conn->query($sql);
         }
     }

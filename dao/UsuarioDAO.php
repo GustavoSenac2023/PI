@@ -39,6 +39,38 @@
             echo "Failure";
             echo "<script>location.href='../view/index.html';</script>";
         }
+        function resgataID($codigo){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao();
+            $sql="SELECT * FROM usuario WHERE usuario_id='$codigo'";
+            return $con->conn->query($sql);
+        }
+        function excluirUsuario($codigo){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao(); 
+            $sql="DELETE FROM usuario WHERE usuario_id= '$codigo'";
+            $res=$con->conn->query($sql);
+            $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
+            //echo "<script>location.href='../index.html';</script>";
+        }
+
+        function alterarUsuario(Usuario $user){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao(); 
+            $sql="UPDATE usuario SET nome=:nome,pass=:pass,email=:email,telefone=:telefone WHERE usuario_id=:usuario_id";
+            $stmt=$con->conn->prepare($sql);
+            $stmt->bindValue(':usuario_id',$user->getId());
+            $stmt->bindValue(':nome',$user->getNome());
+            $stmt->bindValue(':pass',$user->getSenha());
+            $stmt->bindValue(':email',$user->getEmail());
+            $stmt->bindValue(':telefone',$user->getTelefone());
+            $res=$stmt->execute();
+            $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
+            //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
+        }
     }
 
 ?>

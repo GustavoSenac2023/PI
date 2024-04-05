@@ -34,6 +34,45 @@
             $sql="SELECT categoria_id FROM categoria ORDER BY categoria_id DESC LIMIT 1";
             return $con->conn->query($sql);
         }
+
+        function resgataID($codigo){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao();
+            $sql="SELECT * FROM produto WHERE produto_id='$codigo'";
+            return $con->conn->query($sql);
+        }
+        function excluirProduto($codigo){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao(); 
+            $sql="DELETE FROM prouduto WHERE produto_id= '$codigo'";
+            $res=$con->conn->query($sql);
+            $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
+            //echo "<script>location.href='../index.html';</script>";
+        }
+
+        function alterarUsuario(Produto $prod){
+            include 'Conexao.php';
+            $con= new Conexao();
+            $con->fazConexao(); 
+            $sql="UPDATE produto SET nome=:nome,preco=:preco,quantidade=:quantidade,fk_Categoria=:fk_Categoria WHERE produto_id=:produto_id";
+            $stmt=$con->conn->prepare($sql);
+            $stmt->bindValue(':produto_id',$prod->getId());
+            $stmt->bindValue(':nome',$prod->getNome());
+            $stmt->bindValue(':preco',$prod->getPreco());
+            $stmt->bindValue(':quantidade',$prod->getQuantidade());
+            $stmt->bindValue(':fk_Categoria',$prod->getCodCat());
+            $res=$stmt->execute();
+            $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
+            //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
+        }
+        function listarProduto(){
+            $con= new Conexao();
+            $con->fazConexao();
+            $sql="SELECT * FROM produto ORDER BY produto_id";
+            return $con->conn->query($sql);
+        }
     }
 
 ?>

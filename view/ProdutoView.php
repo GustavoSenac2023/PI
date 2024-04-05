@@ -15,13 +15,14 @@
         <fieldset>
             <legend>Produto</legend>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" required>
             <br>
             <label for="preco">Preço</label>
-            <input type="text" name="preco" id="preco">
+            <input type="text" name="preco" id="preco" required>
             <br>
             <label for="quantidade">Quantidade</label>
-            <input type="text" name="quantidade" id="quantidade">
+            <input type="text" name="quantidade" id="quantidade" required>
+            <br>
             <label for="categoria">Categoria</label>
             <input type="text" name="categoria" id="categoria">
         </fieldset>
