@@ -43,6 +43,7 @@
             //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
         function listarPagamento(){
+            include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM forma_pagamento ORDER BY formapag_id";

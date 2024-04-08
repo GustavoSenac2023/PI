@@ -14,6 +14,7 @@
                     case "Listar":
                         listar();
                         break;
+                        
         default:
             echo "Key not found";
             break;
@@ -32,7 +33,7 @@
         
     }
     function listar() {
-        
+        include '../view/ListPagamento.php';
     }
 
 ?>

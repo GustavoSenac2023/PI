@@ -1,8 +1,9 @@
 <?php
-    include 'Conexao.php';
+    
     class UsuarioDAO{
         
         function cadastrarUsuario(Usuario $model){
+            include 'Conexao.php';
             $con=new Conexao();
             $con->fazConexao();
             $sql="INSERT INTO usuario (nome,pass,email,telefone) VALUES (:nome,:pass,:email,:telefone)";
@@ -16,18 +17,21 @@
             //echo "<script>location.href='../view/index.html';</script>";
         }
         function listarUsuario(){
+            include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM usuario ORDER BY usuario_id";
             return $con->conn->query($sql);
         }
         function verifUsuarios(){
+            include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT email,pass FROM usuario";
             return $con->conn->query($sql);
         }
         function login($email,$pass){
+            include 'Conexao.php';
             $users= new UsuarioDAO();
             $list=$users->verifUsuarios();
             while($tmp=$list->fetch(PDO::FETCH_OBJ)){

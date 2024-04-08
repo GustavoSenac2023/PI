@@ -41,7 +41,8 @@
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
             //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
-        function listarProduto(){
+        function listarCategoria(){
+            include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM categoria ORDER BY categoria_id";

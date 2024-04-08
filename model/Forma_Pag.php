@@ -51,6 +51,11 @@
             $fpdao=new Form_PagDAO();
             $fpdao->cadastrarPagamento($this);
         }
+        function listarFPag(){
+            include '../dao/Form_PagDAO.php';
+            $fpdao=new Form_PagDAO();
+            return $fpdao->listarPagamento();
+        }
     }
 
 ?>

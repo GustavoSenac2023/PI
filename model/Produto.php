@@ -16,7 +16,11 @@
         }
 
         
-
+        function listarProduto(){
+            include '../dao/ProdutoDAO.php';
+            $pro= new ProdutoDAO();
+            return $pro->listarProduto();
+        }
 
 
         function cadastrarProduto(Produto $pro){

@@ -51,6 +51,11 @@
             $pdao=new PagamentoDAO();
             $pdao->cadastrarPagamento($this);
         }
+        function listarPag(){
+            include '../dao/PagamentoDAO.php';
+            $dao=new PagamentoDAO();
+            return $dao->listarPagamento();
+        }
     }
 
 ?>

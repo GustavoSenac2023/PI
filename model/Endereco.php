@@ -131,6 +131,11 @@
             $ender=new EnderecoDAO();
             $ender->cadastrarEndereco($this);
         }
+        function listarEndereco(){
+                include '../dao/EnderecoDAO.php';
+                $ender=new EnderecoDAO();
+                return $ender->listarEndereco();
+        }
     
     }
     

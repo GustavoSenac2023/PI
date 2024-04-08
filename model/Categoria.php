@@ -54,7 +54,11 @@
             $cat=new CategoriaDAO();
             $cat->cadastrarCategoria($this);
         }
-
+        function listarCategoria(){
+            include '../dao/CategoriaDAO.php';
+            $cat=new CategoriaDAO();
+            return $cat->listarCategoria();
+        }
     }
 
 ?>

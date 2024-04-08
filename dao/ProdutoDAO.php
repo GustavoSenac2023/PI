@@ -68,6 +68,7 @@
             //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
         function listarProduto(){
+            include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM produto ORDER BY produto_id";

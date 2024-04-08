@@ -16,7 +16,7 @@ class UsuarioCont{
     }
     public static function listarUsuario() {
         $model=new Usuario(null,null,null,null,null);
-        return $model;
+        return $model->listarUsuario();
     }
     public static function resgataID($codigo) {
         $model=new Usuario(null,null,null,null,null);

@@ -7,6 +7,11 @@
             //echo "CONT ".$rua;
             $ender->cadastrarEndereco($ender);
         }
+        public static function listarEndereco(){
+            include '../model/Endereco.php';
+            $ender=new Endereco(null,null,null,null,null,null);
+            return $ender->listarEndereco();
+        }
     }
 
 ?>

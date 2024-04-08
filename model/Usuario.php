@@ -117,6 +117,11 @@
                 $user=new UsuarioDAO();
                 $user->login($email,$pass);
         }
+        function listarUsuario(){
+                include '../dao/UsuarioDAO.php';
+                $user=new UsuarioDAO();
+                return $user->listarUsuario();
+        }
 
     }
 
