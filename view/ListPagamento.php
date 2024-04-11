@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    include "../controller/PagamentoCont.php";
+<?php
+    require_once "../controller/PagamentoCont.php";
     $res = PagamentoCont::listarPag();
     $qtd=$res->rowCount();
     if ($qtd>0) {
@@ -32,9 +32,8 @@
     }else {
         echo "No data found!";
     }
-    ?>
-<?php
-    include "../controller/Forma_PagCont.php";
+    unset($row);
+    require_once "../controller/Forma_PagCont.php";
     $res = Forma_PagCont::listarFPag();
     $qtd=$res->rowCount();
     if ($qtd>0) {
@@ -58,6 +57,6 @@
     }else {
         echo "No data found!";
     }
-    ?>
+?>
 </body>
 </html>
