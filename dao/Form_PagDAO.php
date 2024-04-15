@@ -2,7 +2,7 @@
 
     class Form_PagDAO{
         function cadastrarPagamento(Forma_Pag $fpag) {
-            include_once 'Conexao.php';
+            include_once 'Conexao2.php';
             $con=new Conexao();
             $con->fazConexao();
             $sql="INSERT INTO forma_pagamento (descricao) VALUES (:descricao)";
@@ -14,14 +14,14 @@
             //echo "<script>location.href='../view/index.html';</script>";
         }
         function resgataID($codigo){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM forma_pagamento WHERE formapag_id='$codigo'";
             return $con->conn->query($sql);
         }
         function excluirPagamento($codigo){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao(); 
             $sql="DELETE FROM forma_pagamento WHERE formapag_id= '$codigo'";
@@ -31,7 +31,7 @@
         }
 
         function alterarPagamento(Forma_Pag $fpag){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao(); 
             $sql="UPDATE forma_pagamento SET descricao=:descricao WHERE formapag_id=:formapag_id";
@@ -43,7 +43,7 @@
             //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
         }
         function listarPagamento(){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM forma_pagamento ORDER BY formapag_id";

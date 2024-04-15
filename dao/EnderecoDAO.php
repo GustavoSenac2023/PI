@@ -4,7 +4,7 @@
     class EnderecoDAO{
 
         function cadastrarEndereco(Endereco $model){
-            include_once 'Conexao.php';
+            include_once 'Conexao2.php';
             $con=new Conexao();
             $con->fazConexao();
             $sql="INSERT INTO endereco (endereco_user,rua,numero_rua,bairro,logradouro,complemento) VALUES (:endereco_user,:rua,:numero_rua,:bairro,:logradouro,:complemento)";
@@ -26,28 +26,28 @@
             
         }
         function listarEndereco(){
-            include_once 'Conexao.php';
+            include_once 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM endereco ORDER BY endereco_user";
             return $con->conn->query($sql);
         }
         function getKey(){
-            include_once 'Conexao.php';
+            include_once 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT usuario_id FROM usuario ORDER BY usuario_id DESC LIMIT 1";
             return $con->conn->query($sql);
         }
         function resgataID($codigo){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao();
             $sql="SELECT * FROM endereco WHERE endereco_user='$codigo'";
             return $con->conn->query($sql);
         }
         function excluirEndereco($codigo){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao(); 
             $sql="DELETE FROM endereco WHERE endereco_user= '$codigo'";
@@ -57,7 +57,7 @@
         }
 
         function alterarEndereco(Endereco $end){
-            include 'Conexao.php';
+            include 'Conexao2.php';
             $con= new Conexao();
             $con->fazConexao(); 
             $sql="UPDATE endereco SET rua=:rua,logradouro=:logradouro,numero_rua=:numero_rua,bairro=:bairro,complemento=:complemento WHERE endereco_user=:endereco_user";

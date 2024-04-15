@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-    require_once "../controller/PagamentoCont.php";
+    require "../controller/PagamentoCont.php";
     $res = PagamentoCont::listarPag();
     $qtd=$res->rowCount();
     if ($qtd>0) {
@@ -28,12 +28,12 @@
             echo "</form>";
             print "</tr>";
         }
-        print "</table>";     
+        print "</table>";  
+           
     }else {
         echo "No data found!";
     }
-    unset($row);
-    require_once "../controller/Forma_PagCont.php";
+    require '../controller/Forma_PagCont.php';
     $res = Forma_PagCont::listarFPag();
     $qtd=$res->rowCount();
     if ($qtd>0) {
