@@ -13,32 +13,32 @@
         <fieldset>
             <legend>Informações</legend>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" required>
             <br>
             <label for="email">Email</label>
-            <input type="text" name="email" id="email">
+            <input type="text" name="email" id="email" required>
             <br>
             <label for="telefone">Telefone</label>
-            <input type="text" name="telefone" id="telefone">
+            <input type="text" name="telefone" id="telefone" required>
             <br>
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" required>
             <br>
         </fieldset>
         <br>
         </fieldset>
             <legend>Endereco</legend>
             <label for="rua">Rua</label>
-            <input type="text" name="rua" id="rua">
+            <input type="text" name="rua" id="rua" required>
             <br>
             <label for="numero">Numero Rua</label>
-            <input type="text" name="numero" id="numero">
+            <input type="text" name="numero" id="numero" required>
             <br>
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
+            <input type="text" name="bairro" id="bairro" required>
             <br>
             <label for="logradouro">Logradouro</label>
-            <input type="text" name="logradouro" id="logradouro">
+            <input type="text" name="logradouro" id="logradouro" required>
             <br>
             <label for="complemento">Complemento</label>
             <input type="text" name="complemento" id="complemento">
@@ -46,7 +46,7 @@
         <fieldset>
             <input type='hidden' name='codigo' value="$id" ><br>
             <input type='hidden' name='op' value='Incluir'><br>
-        <input type="submit" value="Cadastrar">
+        <input type="submit" value="Cadastrar" id="cad">
     </form>
     <a href="index.html">Cancelar</a>
 </body>

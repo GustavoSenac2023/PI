@@ -1,0 +1,17 @@
+#form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#btn{
+    
+}
+#crtacc{
+    
+    background-color: green;
+    border-radius: 10px;
+}
+body{
+    background-color: grey;
+}

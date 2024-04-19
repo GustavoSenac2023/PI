@@ -9,18 +9,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="form">
     <form action="../process/UsuarioProcess.php" method="post">
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email">
+      <div id="email">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+      </div>
       <br>
-      <label for="senha">Senha</label>
-      <input type="password" name="senha" id="senha">
+      <div id="pass">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha">
+      </div>
       <input type='hidden' name='op' value='Login'><br>
       <input type="submit" value="Enviar">
     </form>
-    <a href="crtuser.php">Criar Conta</a>
+  </div>
+  <div id="btn">
+    <a href="crtuser.php" id="crtacc">Criar Conta</a>
+  </div>
 </body>
 
 </html>
