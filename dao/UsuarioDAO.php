@@ -57,7 +57,7 @@
             $sql="DELETE FROM usuario WHERE usuario_id= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            //echo "<script>location.href='../index.html';</script>";
+            echo "<script>location.href='../view/ListUsuario.php';</script>";
         }
 
         function alterarUsuario(Usuario $user){

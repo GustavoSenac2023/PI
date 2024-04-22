@@ -8,11 +8,11 @@ class UsuarioCont{
     }
     public static function excluirUsuario($codigo) {
         $user=new Usuario(null,null,null,null,null,null);
-        $user;
+        return $user->excluirUsuario($codigo);
     }
     public static function alterarUsuario($id,$nome,$email,$senha,$telefone) {
         $user=new Usuario($id,$nome,$email,$senha,$telefone);
-        return $user;
+        return $user->alterarUsuario($user);
     }
     public static function listarUsuario() {
         $model=new Usuario(null,null,null,null,null);
@@ -20,7 +20,7 @@ class UsuarioCont{
     }
     public static function resgataID($codigo) {
         $model=new Usuario(null,null,null,null,null);
-        return $model;
+        return $model->resgataID($codigo);
     }
     public static function login($email,$pass){
         $user=new Usuario(null,null,null,null,null);

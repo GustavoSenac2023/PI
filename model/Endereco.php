@@ -136,7 +136,21 @@
                 $ender=new EnderecoDAO();
                 return $ender->listarEndereco();
         }
-    
+        function resgataID($codigo) {
+                include '../dao/EnderecoDAO.php';
+                $ender=new EnderecoDAO();
+                return $ender->resgataID($codigo);
+        }
+        function alterarEndereco(Endereco $end){
+                include '../dao/EnderecoDAO.php';
+                $ender=new EnderecoDAO();
+                return $ender->alterarEndereco($end);
+        }
+        function excluirEndereco($codigo) {
+                include '../dao/EnderecoDAO.php';
+                $ender=new EnderecoDAO();
+                return $ender->excluirEndereco($codigo);
+        }
     }
     
 ?>

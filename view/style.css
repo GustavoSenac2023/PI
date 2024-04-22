@@ -5,12 +5,16 @@
     transform: translate(-50%, -50%);
 }
 #btn{
-    
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #crtacc{
-    
+    text-decoration: none;
     background-color: green;
-    border-radius: 10px;
+    border-radius: 5px;
+    color: black;
 }
 body{
     background-color: grey;

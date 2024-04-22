@@ -27,8 +27,8 @@
             print "<td>".$row->telefone."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->usuario_id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../controller/UsuarioProcess.php?op=ExcluirU&codigo=".$row->usuario_id."';\">Excluir</button>
+            <button id='alt' onclick=\"location.href='../view/crtuser.php?op=Alterar&codigo=".$row->usuario_id."';\">Alterar</button>
+            <button id='del' onclick=\"location.href='../process/UsuarioProcess.php?op=Excluir&codigo=".$row->usuario_id."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";
@@ -61,8 +61,8 @@
             print "<td>".$row->complemento."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->endereco_user."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../controller/UsuarioProcess.php?op=ExcluirE&codigo=".$row->endereco_user."';\">Excluir</button>
+            <button id='alt' onclick=\"location.href='../view/crtuser.php?op=Alterar&codigo=".$row->endereco_user."';\">Alterar</button>
+            <button id='del' onclick=\"location.href='../process/UsuarioProcess.php?op=Excluir&codigo=".$row->endereco_user."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";

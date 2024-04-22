@@ -12,6 +12,21 @@
             $ender=new Endereco(null,null,null,null,null,null);
             return $ender->listarEndereco();
         }
+        public static function resgataID($codigo) {
+            include '../model/Endereco.php';
+            $model=new Endereco(null,null,null,null,null,null);
+            return $model->resgataID($codigo);
+        }
+        public static function alterarEndereco($id,$rua,$numero,$bairro,$logradouro,$complemento) {
+            include '../model/Endereco.php';
+            $end=new Endereco($id,$rua,$numero,$bairro,$logradouro,$complemento);
+            return $end->alterarEndereco($end);
+        }
+        public static function excluirEndereco($codigo) {
+            include '../model/Endereco.php';
+            $end=new Endereco(null,null,null,null,null,null);
+            return $end->excluirEndereco($codigo);
+        }
     }
 
 ?>

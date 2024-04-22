@@ -122,6 +122,21 @@
                 $user=new UsuarioDAO();
                 return $user->listarUsuario();
         }
+        function resgataID($codigo){
+                include '../dao/UsuarioDAO.php';
+                $user=new UsuarioDAO();
+                return $user->resgataID($codigo);
+        }
+        function alterarUsuario(Usuario $user) {
+                include '../dao/UsuarioDAO.php';
+                $userobj=new UsuarioDAO();
+                return $userobj->alterarUsuario($user);
+        }
+        function excluirUsuario($codigo) {
+                include '../dao/UsuarioDAO.php';
+                $userobj=new UsuarioDAO();
+                return $userobj->excluirUsuario($codigo);
+        }
 
     }
 
