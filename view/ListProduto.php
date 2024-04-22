@@ -28,7 +28,7 @@
             print "<td>
             <div class='btns'>
             <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->produto_id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../controller/ProdutoProcess.php?op=ExcluirP&codigo=".$row->produto_id."';\">Excluir</button>
+            <button id='del' onclick=\"location.href='../process/ProdutoProcess.php?op=Excluir&codigo=".$row->produto_id."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";
@@ -54,7 +54,7 @@
             print "<td>
             <div class='btns'>
             <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->categoria_id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../controller/ProdutoProcess.php?op=ExcluirC&codigo=".$row->categoria_id."';\">Excluir</button>
+            <button id='del' onclick=\"location.href='../process/ProdutoProcess.php?op=Excluir&codigo=".$row->categoria_id."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";

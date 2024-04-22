@@ -44,7 +44,11 @@
         
     }
     function excluir() {
-        
+        $id=$_POST["codigo"];
+        $contr0=new ProdutoCont();
+        $contr0->excluirProd($id);
+        $contr=new CategoriaCont();
+        $contr->excluirCat($id);
     }
     function listar() {
         include '../view/ListProduto.php';
