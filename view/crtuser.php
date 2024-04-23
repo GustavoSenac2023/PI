@@ -32,11 +32,6 @@ if ($op=="Alterar") {
     $ided=$rowed->endereco_user;
     $operacao="Alterar";
 }else {
-    $nome="";
-    $preco="";
-    $quantidade="";
-    $id="";
-    $idLoja="";
     $operacao="Incluir";
 }
 print <<<END

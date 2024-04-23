@@ -42,7 +42,7 @@
             $sql="SELECT * FROM produto WHERE produto_id='$codigo'";
             return $con->conn->query($sql);
         }
-        function excluirProduto($codigo){
+        function excluirProd($codigo){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
@@ -52,7 +52,7 @@
             //echo "<script>location.href='../index.html';</script>";
         }
 
-        function alterarUsuario(Produto $prod){
+        function alterarProd(Produto $prod){
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
@@ -65,7 +65,7 @@
             $stmt->bindValue(':fk_Categoria',$prod->getCodCat());
             $res=$stmt->execute();
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            //echo "<script>location.href='../view/FormProdList.php?op=Listar';</script>";
+            echo "<script>location.href='../view/ListProduto.php';</script>";
         }
         function listarProduto(){
             include 'Conexao.php';

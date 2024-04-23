@@ -59,6 +59,22 @@
             $cat=new CategoriaDAO();
             return $cat->listarCategoria();
         }
+        function excluirCat($codigo) {
+            include '../dao/CategoriaDAO.php';
+            $cat=new CategoriaDAO();
+            return $cat->excluirCat($codigo);
+        }
+        function resgataID($codigo){
+            include '../dao/CategoriaDAO.php';
+            $cat=new CategoriaDAO();
+            return $cat->resgataID($codigo);
+        }
+        function alteraCat(Categoria $cat) {
+            include '../dao/CategoriaDAO.php';
+            $catd=new CategoriaDAO();
+            return $catd->alteraCat($cat);
+        }
+
     }
 
 ?>

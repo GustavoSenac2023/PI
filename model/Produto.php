@@ -28,7 +28,21 @@
             $pro=new ProdutoDAO();
             $pro->cadastrarProduto($this);
         }
-
+        function excluirProd($codigo) {
+                include '../dao/ProdutoDAO.php';
+            $pro=new ProdutoDAO();
+            return $pro->excluirProd($codigo);
+        }
+        function resgataID($codigo){
+                include '../dao/ProdutoDAO.php';
+                $prod=new ProdutoDAO();
+                return $prod->resgataID($codigo);
+        }
+        function alteraProd(Produto $prod) {
+                include '../dao/ProdutoDAO.php';
+                $prodd=new ProdutoDAO();
+                return $prodd->alterarProd($prod);
+        }
 
         /**
          * Get the value of id

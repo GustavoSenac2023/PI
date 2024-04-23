@@ -12,6 +12,9 @@
                 case "Excluir":
                     excluir();
                     break;
+                    case "ExcluirC":
+                        excluirC();
+                        break;
                     case "Listar":
                         listar();
                         break;
@@ -41,12 +44,28 @@
         
     }
     function alterar() {
-        
+        $idc=$_POST["codigoC"];
+        $descricao=$_POST["descricao"];
+        $contrc= new CategoriaCont();
+        $contrc->alteraCat($idc,$descricao);
+        $idp=$_POST["codigoP"];
+        $nome=$_POST["nome"];
+        $preco=$_POST["preco"];
+        $quantidade=$_POST["quantidade"];
+        $cod_cat=$_POST["categoria"];
+        $contrp=new ProdutoCont();
+        $contrp->alteraProd($idp,$nome,$preco,$quantidade,$cod_cat);
+
+
     }
     function excluir() {
-        $id=$_POST["codigo"];
+        $idp=$_POST["codigoP"];
         $contr0=new ProdutoCont();
-        $contr0->excluirProd($id);
+        $contr0->excluirProd($idp);
+        
+    }
+    function excluirC(){
+        $id=$_POST["codigoC"];
         $contr=new CategoriaCont();
         $contr->excluirCat($id);
     }

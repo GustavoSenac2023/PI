@@ -27,7 +27,7 @@
             print "<td>".$row->fk_Categoria."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->produto_id."';\">Alterar</button>
+            <button id='alt' onclick=\"location.href='../view/ProdutoView.php?op=Alterar&codigo=".$row->produto_id."';\">Alterar</button>
             <button id='del' onclick=\"location.href='../process/ProdutoProcess.php?op=Excluir&codigo=".$row->produto_id."';\">Excluir</button>
             </div>
             </td>";
@@ -53,8 +53,8 @@
             print "<td>".$row->descricao."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->categoria_id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../process/ProdutoProcess.php?op=Excluir&codigo=".$row->categoria_id."';\">Excluir</button>
+            <button id='alt' onclick=\"location.href='../view/ProdutoView.php?op=Alterar&codigo=".$row->categoria_id."';\">Alterar</button>
+            <button id='del' onclick=\"location.href='../process/ProdutoProcess.php?op=ExcluirC&codigo=".$row->categoria_id."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";
