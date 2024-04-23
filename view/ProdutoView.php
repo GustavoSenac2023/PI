@@ -49,8 +49,8 @@ print <<<END
             <label for='categoria'>Categoria</label>
             <input type='text' name='categoria' id='categoria' value='$fk'>
         </fieldset>
-        <input type='hidden' name='codigoP' value="$id" ><br>
-        <input type='hidden' name='codigoC' value="$idc" ><br>
+        <input type='hidden' name='codigoP' value='$id' ><br>
+        <input type='hidden' name='codigoC' value='$idc' ><br>
         <input type='hidden' name='op' value='$operacao'><br>
         <input type='submit' value='$operacao'>
     </form>        

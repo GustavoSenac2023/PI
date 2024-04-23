@@ -46,10 +46,10 @@
             include 'Conexao.php';
             $con= new Conexao();
             $con->fazConexao(); 
-            $sql="DELETE FROM prouduto WHERE produto_id= '$codigo'";
+            $sql="DELETE FROM produto WHERE produto_id= '$codigo'";
             $res=$con->conn->query($sql);
             $res ? print "<script>alert('Sucess')</script>" : print "<script>alert('Failure')</script>";
-            //echo "<script>location.href='../index.html';</script>";
+            echo "<script>location.href='../view/ListProduto.php';</script>";
         }
 
         function alterarProd(Produto $prod){

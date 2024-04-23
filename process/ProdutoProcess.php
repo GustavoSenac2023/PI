@@ -59,15 +59,17 @@
 
     }
     function excluir() {
-        $idp=$_POST["codigoP"];
+        $idp=$_REQUEST["codigo"];
         $contr0=new ProdutoCont();
         $contr0->excluirProd($idp);
         
     }
     function excluirC(){
-        $id=$_POST["codigoC"];
+        excluir();
+        $id=$_REQUEST["codigo"];
         $contr=new CategoriaCont();
         $contr->excluirCat($id);
+        
     }
     function listar() {
         include '../view/ListProduto.php';
