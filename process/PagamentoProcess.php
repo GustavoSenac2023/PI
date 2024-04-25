@@ -33,12 +33,12 @@
         
     }
     function excluirFP(){ 
-        $id=$_REQUEST["codigoFP"];
+        $id=$_REQUEST["codigo"];
         $fpcont=new Forma_PagCont();
         $fpcont->excluirFP($id);
     }
     function excluir() {
-        $id=$_REQUEST["codigoP"];
+        $id=$_REQUEST["codigo"];
         $pcont=new PagamentoCont();
         $pcont->excluirP($id);
     }
