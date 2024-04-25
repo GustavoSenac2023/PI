@@ -56,6 +56,17 @@
             $dao=new PagamentoDAO();
             return $dao->listarPagamento();
         }
+        function resgataID($codigo) {
+            include '../dao/PagamentoDAO.php';
+            $pdao=new PagamentoDAO();
+            return $pdao->resgataID($codigo);
+        }
+        function excluirP($codigo) {
+            include '../dao/PagamentoDAO.php';
+            $pdao=new PagamentoDAO();
+            return $pdao->excluirPagamento($codigo);
+        }
+
     }
 
 ?>

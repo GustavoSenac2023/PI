@@ -11,6 +11,17 @@
             $pag=new Pagamento(null,null);
             return $pag->listarPag();
         }
+        public static function resgataID($codigo) {
+            include '../model/Pagamento.php';
+            $pag = new Pagamento(null,null);
+            return $pag->resgataID($codigo);
+        }
+        public static function excluirP($codigo) {
+            include '../model/Pagamento.php';
+            $pag = new Pagamento(null,null);
+            return $pag->excluirP($codigo);
+        }
+
     }
 
 ?>

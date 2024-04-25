@@ -26,6 +26,13 @@ if ($op=="Alterar") {
     $idc=$rowc->categoria_id;
     $operacao="Alterar";
 }else {
+    $nome="";
+    $preco="";
+    $quantidade="";
+    $id="";
+    $fk="";
+    $desc="";
+    $idc="";
     $operacao="Incluir";
 }
 print <<<END

@@ -56,6 +56,16 @@
             $fpdao=new Form_PagDAO();
             return $fpdao->listarPagamento();
         }
+        function resgataID($codigo) {
+            include '../dao/Form_PagDAO.php';
+            $fpdao=new Form_PagDAO();
+            return $fpdao->resgataID($codigo);
+        }
+        function excluirFP($codigo){
+            include '../dao/Form_PagDAO.php';
+            $fpdao=new Form_PagDAO();
+            return $fpdao->excluirPagamento($codigo);
+        }
     }
 
 ?>

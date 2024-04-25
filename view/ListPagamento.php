@@ -21,8 +21,8 @@
             print "<td>".$row->fk_Forma_Pagamento."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->pagamento_id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../controller/PagamentoProcess.php?op=ExcluirP&codigo=".$row->pagamento_id."';\">Excluir</button>
+            <button id='alt' onclick=\"location.href='../view/PagamentoView.php?op=Alterar&codigo=".$row->pagamento_id."';\">Alterar</button>
+            <button id='del' onclick=\"location.href='../process/PagamentoProcess.php?op=ExcluirP&codigo=".$row->pagamento_id."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";
@@ -46,8 +46,8 @@
             print "<td>".$row->descricao."</td>";
             print "<td>
             <div class='btns'>
-            <button id='alt' onclick=\"location.href='../view/FormProd.php?op=Alterar&codigo=".$row->formapag_id."';\">Alterar</button>
-            <button id='del' onclick=\"location.href='../controller/PagamentoProcess.php?op=ExcluirFP&codigo=".$row->formapag_id."';\">Excluir</button>
+            <button id='alt' onclick=\"location.href='../view/PagamentoView.php?op=Alterar&codigo=".$row->formapag_id."';\">Alterar</button>
+            <button id='del' onclick=\"location.href='../process/PagamentoProcess.php?op=ExcluirFP&codigo=".$row->formapag_id."';\">Excluir</button>
             </div>
             </td>";
             echo "</form>";

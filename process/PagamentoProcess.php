@@ -8,9 +8,12 @@
             case "Alterar":
                 alterar();
                 break;
-                case "Excluir":
+                case "ExcluirP":
                     excluir();
                     break;
+                    case "ExcluirFP":
+                        excluirFP();
+                        break;
                     case "Listar":
                         listar();
                         break;
@@ -29,8 +32,15 @@
     function alterar() {
         
     }
+    function excluirFP(){ 
+        $id=$_REQUEST["codigoFP"];
+        $fpcont=new Forma_PagCont();
+        $fpcont->excluirFP($id);
+    }
     function excluir() {
-        
+        $id=$_REQUEST["codigoP"];
+        $pcont=new PagamentoCont();
+        $pcont->excluirP($id);
     }
     function listar() {
         include '../view/ListPagamento.php';

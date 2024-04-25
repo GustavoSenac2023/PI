@@ -32,6 +32,16 @@ if ($op=="Alterar") {
     $ided=$rowed->endereco_user;
     $operacao="Alterar";
 }else {
+    $nome="";
+    $email="";
+    $telefone="";
+    $pass="";
+    $rua="";
+    $numero="";
+    $bairro="";
+    $logradouro="";
+    $complemento="";
+    $id="";
     $operacao="Incluir";
 }
 print <<<END
